@@ -10,8 +10,8 @@ showMultiplicationTable(9);
 
 console.log("");
 
-function randomNumber(smallestNumber,largestNumber) { 
-    return Math.floor(Math.random() * (largestNumber - smallestNumber) + smallestNumber); }
+function randomNumber(min,max) { 
+    return Math.floor(Math.random() * (min - max) + min); }
 
 for (var x = 1; x <= 10 ; x ++){
     var randomGen = randomNumber(20,200)
