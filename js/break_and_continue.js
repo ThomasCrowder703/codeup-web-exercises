@@ -16,6 +16,6 @@ for (var list = 1; list <=50; list++) {
     }
 
 }
-
-console.log("");
+//
+// console.log("");
 
