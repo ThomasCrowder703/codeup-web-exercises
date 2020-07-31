@@ -38,6 +38,10 @@ console.log(names[3]);
      * Refactor your above code to use a `forEach` loop
      */
 
+    names.forEach(function (name) {
+        console.log("This name is " + name + ".");
+    })
+
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -52,4 +56,21 @@ console.log(names[3]);
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+
+    function firstIndex(x){
+        return x[0];
+    }
+
+    function secondIndex(x){
+        return x[1];
+    }
+
+    function thirdIndex(x){
+        return x[x.length - 1];
+    }
+
+    console.log(firstIndex(names));
+    console.log(secondIndex(names));
+    console.log(thirdIndex(names));
 })();
+
