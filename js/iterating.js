@@ -56,21 +56,21 @@ console.log(names[3]);
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+    var mainArray = [1,2,3,4,5]
 
-    function firstIndex(x){
-        return x[0];
+    const first = function (arr) {
+        return arr[0];
     }
+    console.log(first(mainArray))
 
-    function secondIndex(x){
-        return x[1];
+    const second = function(arr){
+        return arr[1];
     }
+    console.log(second(mainArray))
 
-    function thirdIndex(x){
-        return x[x.length - 1];
+    const third = function(arr){
+        return arr [arr.length - 1];
     }
-
-    console.log(firstIndex(names));
-    console.log(secondIndex(names));
-    console.log(thirdIndex(names));
+    console.log(third(mainArray))
 })();
 
