@@ -32,6 +32,7 @@
     console.log(planetsArray);
     var listString = planetsArray.join("<li>");
     console.log(listString);
+    document.write(listString);
 
 
 })();
