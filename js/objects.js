@@ -15,8 +15,8 @@
         firstName : "Thomas",
         lastName : "Crowder",
     }
-    console.log(person.firstName);
-    console.log(person.lastName);
+    console.log(person);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -27,7 +27,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     person.sayHello = function(){
-         return "Hello from " + person.firstName + " " + person.lastName + "!"
+         return "Hello from " + this.firstName + " " + this.lastName + "!"
      }
 
      console.log(person.sayHello())
@@ -46,11 +46,25 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    function discountChecker(shoppers){
+        shoppers.forEach(function (shopper) {
+            if (shopper.amount >= 200){
+                var discount = (shopper.amount*.12).toFixed(2);
+                console.log(shopper.name + " spent $" + shopper.amount.toFixed(2) + ". " + "They will receive a discount of $"  + discount + ". " + "Making their total $" + (shopper.amount - discount) + ".")
+            }else{
+                console.log( shopper.name + " paid $" + shopper.amount.toFixed(2) + ". So he will not receive a discount. Meaning his total is $" + shopper.amount.toFixed(2) )
+            }
+
+        })
+    }
+discountChecker(shoppers);
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
