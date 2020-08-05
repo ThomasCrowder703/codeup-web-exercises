@@ -79,6 +79,48 @@ discountChecker(shoppers);
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: "Where the Red Fern Grows",
+            author:{
+                firstName: "Wilson",
+                lastName: "Rawls"
+
+            }
+        },
+        {
+            title: "Brave New World",
+            author:{
+                firstName: "Aldous" ,
+                lastName: "Huxley"
+            }
+        },
+        {
+            title: "Anthem",
+            author:{
+                firstName: "Ayn",
+                lastName: "Rand"
+            }
+        },
+        {
+            title: "The Tempest",
+            author:{
+                firstName: "William",
+                lastName: "Shakespeare"
+            }
+        },
+        {
+            title:"Don Quixote",
+            author:{
+                firstName: "Miguel",
+                lastName: "Cervantes",
+            }
+        }
+
+
+    ];
+
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -104,6 +146,17 @@ discountChecker(shoppers);
      *      ...
      */
 
+    function bookLog(booksArray){
+        for (var x = 0; x < booksArray.length;x++){
+            var book = booksArray[x];
+            console.log("Book # " + (x+1));
+            console.log("Title: " + book.title);
+            console.log("Author :" + book.author.firstName + " " + book.author.lastName);
+            console.log("---");
+        }
+    }
+
+bookLog(books);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -115,4 +168,17 @@ discountChecker(shoppers);
      *   `showBookInfo` function.
      */
 
+    function createBook(title, authorFirstName, authorLastName, booksArray){
+        var newBook = {
+            title: title,
+            author:{
+                firstName: authorFirstName,
+                lastName :authorLastName
+            }
+        }
+        booksArray.push(newBook)
+        return booksArray;
+    }
+    createBook("Huckleberry Finn","Mark","Twain",books)
+    bookLog(books);
 })();
