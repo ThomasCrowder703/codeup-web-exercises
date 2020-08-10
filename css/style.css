@@ -1,7 +1,7 @@
 
-/*.fancy-header{*/
-/*    color: purple;*/
+.fancy-header{
+    color: purple;
 
-/*}*/
+}
 
-/*the embedded stylesheet takes precedence over all the others*/
+/*the inline stylesheet takes precedence over the others. The external takes precedence over the style tag  */
