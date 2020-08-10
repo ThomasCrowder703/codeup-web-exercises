@@ -1,7 +1,10 @@
 
 .fancy-header{
     color: purple;
-
 }
 
 /*the inline stylesheet takes precedence over the others. The external takes precedence over the style tag  */
+
+#top{
+    text-align: center;
+}
