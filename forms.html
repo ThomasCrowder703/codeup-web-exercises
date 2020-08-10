@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register With Us</title>
 </head>
 <body>
     <h1>Register With Us</h1>
 
 
         <form method="POST" action="https://request-inspector.glitch.me/">
-            <input type="text" name="email" placeholder="Enter your email address">
+            <label for="email"></label>
+            <input type="text" id ="email" name="email" placeholder="Enter your email address">
             <br>
-            <input type="password" name="password" placeholder="Enter your password">
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
             <br>
 
+
             <br>
-            <label for="bio">
-                Bio: <textarea id="bio" name="Biography"></textarea>
-            </label>
+            <label for="bio">Bio: </label>
+                Bio: <textarea id="bio" name="bio"></textarea>
             <br>
 
         <h2>How did you hear about us?</h2>
@@ -26,12 +28,12 @@
                 Billboard <input id="billboard" type="radio" name="howUserHeard" value="billboard">
             </label>
 
-            <label for="radio advertisement">
-                Radio Advertisement <input id="radio advertisement" type="radio" name="howUserHeard" value="radioAd">
+            <label for="radio-advertisement">
+                Radio Advertisement <input id="radio-advertisement" type="radio" name="howUserHeard" value="radioAd">
             </label>
 
-            <label for="internet advertisement">
-                Internet Advertisement <input id="internet advertisement" type="radio" name="howUserHeard" value="internet">
+            <label for="internet-advertisement">
+                Internet Advertisement <input id="internet-advertisement" type="radio" name="howUserHeard" value="internet">
             </label>
 
             <label for="Other">
@@ -40,7 +42,7 @@
 
             <br>
             <label for="browser">What browser are you using?</label>
-                <select id="browser" name="browser">
+                <select id="browser" name="browser-Type">
                     <option value="Chrome">Google Chrome</option>
                     <option value="FireFox">FireFox</option>
                     <option value="Safari">Safari</option>
