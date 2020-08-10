@@ -1,10 +1,38 @@
 
 .fancy-header{
-    color: purple;
+    color: aquamarine;
+    text-decoration: underline;
 }
 
 /*the inline stylesheet takes precedence over the others. The external takes precedence over the style tag  */
 
 #top{
     text-align: center;
+}
+
+h2.fancy-header{
+   color: aqua;
+   text-decoration: underline;
+}
+
+body{
+    background-color: orchid;
+}
+
+body{
+    background-image: url("../img/2683171.jpg");
+    background-repeat: no-repeat;
+    background-size: 1480px 1810px;
+}
+
+#table{
+    color: aliceblue;
+}
+
+#lastParagraph{
+    color: aliceblue;
+}
+
+ul{
+    list-style-type: georgian;
 }
