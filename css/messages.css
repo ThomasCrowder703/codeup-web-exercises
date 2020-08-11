@@ -16,11 +16,13 @@ div{
     margin: 10px ;
     border-radius: 10px;
 
+
 }
 div p{
     margin:0px;
     border: 0px;
     padding: 0px;
+    color: black;
     opacity: 100%;
 
 }
@@ -29,7 +31,9 @@ div p{
 .message-info{
     background-color: blue;
     color: darkblue;
+
 }
+
 
 .message-success{
     background-color: lawngreen;
@@ -44,4 +48,5 @@ div p{
 .message-error{
     background-color: crimson;
     color: darkred;
+    opacity: 50%;
 }
