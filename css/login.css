@@ -19,9 +19,9 @@ fieldset {
     -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
-    /* There must be 1em between the content and the border of this element */
-    /* It should have no border */
-    /* Its background should be white */
+    padding: 1em;
+    border: 0px;
+    background-color: white;
 }
 
 .width-80 {
