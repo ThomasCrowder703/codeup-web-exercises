@@ -48,5 +48,5 @@ div p{
 .message-error{
     background-color: crimson;
     color: darkred;
-    opacity: 50%;
 }
+/*color selector was not working correctly so I used similar colors*/
