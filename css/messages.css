@@ -48,5 +48,13 @@ div p{
 .message-error{
     background-color: crimson;
     color: darkred;
+    animation-name: colorChange;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
 }
 /*color selector was not working correctly so I used similar colors*/
+
+@keyframes colorChange {
+    from {background-color: crimson}
+    to {background-color: white}
+}
