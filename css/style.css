@@ -22,12 +22,9 @@ body{
 body{
     background-image: url("../img/2683171.jpg");
     background-repeat: no-repeat;
-    background-size: 1480px 1810px;
+    background-size: 1480px 1900px;
 }
 
-#table{
-    color: aliceblue;
-}
 
 #lastParagraph{
     color: aliceblue;
@@ -36,3 +33,25 @@ body{
 ul{
     list-style-type: georgian;
 }
+
+body{
+    font-family: "Apple SD Gothic Neo"  ;
+}
+
+#table{
+    color: aliceblue;
+    border: 1px white;
+}  /*revisit this code */
+
+
+a:link{
+    color: cornsilk;
+}
+ a:visited{
+     color: lime;
+ }
+
+ a:hover{
+     color: crimson;
+ }
+
