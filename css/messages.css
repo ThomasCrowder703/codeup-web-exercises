@@ -4,6 +4,7 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
+
 }
 
 div{
@@ -13,20 +14,34 @@ div{
     padding-top: 5px;
     border: 1px solid black;
     margin: 10px ;
+    border-radius: 10px;
+
 }
+div p{
+    margin:0px;
+    border: 0px;
+    padding: 0px;
+    opacity: 100%;
+
+}
+
 
 .message-info{
     background-color: blue;
+    color: darkblue;
 }
 
 .message-success{
     background-color: lawngreen;
+    color: darkgreen;
 
 }
 .message-warning{
     background-color: yellow;
+    color: orange;
 }
 
 .message-error{
     background-color: crimson;
+    color: darkred;
 }
