@@ -27,7 +27,7 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
-
+    width: 100%;
     position: fixed;
 }
 .nav {
@@ -38,8 +38,8 @@ a {
 
 .nav-item{
     padding: 1.5em;
-    width: 100%;
     display: inline-block;
+    float: left;
 }
 
 .nav-link {
@@ -52,7 +52,14 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    position: relative;
+    height: 80px;
 }
+.profile-image{
+    position: absolute;
+    top: -45px;
+}
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
