@@ -29,6 +29,7 @@ a {
     background: var(--light-bg);
     width: 100%;
     position: fixed;
+    z-index: 1000;
 }
 .nav {
     list-style-type: none;
@@ -58,6 +59,61 @@ a {
 .profile-image{
     position: absolute;
     top: -45px;
+}
+
+.profile-form{
+    float: right;
+    line-height: 80px;
+}
+
+.profile-details{
+    float: left;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
+}
+
+.profile-items{
+    padding: 0;
+    list-style: none;
+}
+
+.profile-entry{
+    margin:.5em;
+}
+
+.timeline{
+    float: left;
+    width: calc(50% - 1em);
+   margin: 0 .5em;
+}
+
+.who-to-follow{
+    float: right;
+    width:calc(25% - 1em);
+    margin: 0 .5em;
+}
+
+.container{
+    padding-top: 2em;
+}
+
+.media{
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+
+.media-image{
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+
+.media-body{
+    float: left;
+    width: calc(100% - 50px);
 }
 
 .btn {
