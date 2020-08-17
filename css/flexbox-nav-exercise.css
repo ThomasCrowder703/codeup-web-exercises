@@ -1,47 +1,61 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-
 }
 
+body{
+    background-color: #0fb784;
+    font-family: 'Montserrat', sans-serif;
+}
 
 nav{
-    /*background-color: lightgrey;*/
-    padding: 0;
-    margin: 0;
+    background-color: #848487;
     display: flex;
     justify-content: space-between;
-    font-family: 'Montserrat', sans-serif;
+}
+
+header nav a{
+    text-decoration: none;
+    color: black;
 
 }
- li a{
-    text-decoration: none;
-     color: black;
+
+header nav li{
+
+    display: inline-block;
 }
+
 ul{
     list-style-type: none;
 }
-header nav li{
-    margin: 10px;
-    display: inline-block;
-}
+
 header nav a{
     display: inline-block;
+    padding: 10px;
 }
 
-
-.logo-container{
-    color: red;
+div li a{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 3em;
+    padding-top: .2em;
+    padding-bottom: .2em;
 }
 
-/*@keyframes colorChange {*/
-/*    0%{color:black;}*/
-/*    10%{color:blue;}*/
-/*    20%{color:red;}*/
-/*    40%{color: orange;}*/
-/*    60%{color: yellow;}*/
-/*    100%{color: green}*/
-/*}*/
+header nav a:hover{
+    color:blue;
+    background-color: #cbffcd;
+    animation-name: colorChange;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+@keyframes colorChange {
+    0%{color:black;}
+    10%{color:blue;}
+    20%{color:red;}
+    40%{color: orange;}
+    60%{color: yellow;}
+    100%{color: green}
+}
 
 
 
