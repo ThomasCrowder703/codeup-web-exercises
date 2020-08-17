@@ -1,4 +1,47 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+
 }
+
+
+nav{
+    /*background-color: lightgrey;*/
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+
+}
+ li a{
+    text-decoration: none;
+     color: black;
+}
+ul{
+    list-style-type: none;
+}
+header nav li{
+    margin: 10px;
+    display: inline-block;
+}
+header nav a{
+    display: inline-block;
+}
+
+
+.logo-container{
+    color: red;
+}
+
+/*@keyframes colorChange {*/
+/*    0%{color:black;}*/
+/*    10%{color:blue;}*/
+/*    20%{color:red;}*/
+/*    40%{color: orange;}*/
+/*    60%{color: yellow;}*/
+/*    100%{color: green}*/
+/*}*/
+
+
 
