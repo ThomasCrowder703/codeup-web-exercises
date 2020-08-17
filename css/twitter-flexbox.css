@@ -27,6 +27,9 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 }
 .nav {
     list-style-type: none;
@@ -34,7 +37,6 @@ a {
     margin: 0;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
 }
 
 .profile-header{
@@ -67,6 +69,17 @@ a {
     background: var(--light-bg);
     height: 80px;
 }
+
+.container{
+    display: flex;
+    justify-content:space-between;
+}
+
+.media{
+    background-color: var(--light-bg);
+    border: 1px solid var(--separator-color);
+}
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
@@ -75,6 +88,8 @@ a {
     padding: 8px;
     border-radius: 5px;
 }
+
+
 .btn-large {
     font-size: 1.3em;
     padding: 10px;
