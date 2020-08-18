@@ -21,8 +21,8 @@ header nav a{
 }
 
 header nav li{
-
     display: inline-block;
+    margin: 1em 0;
 }
 
 ul{
@@ -40,6 +40,8 @@ div li a{
     padding-top: .2em;
     padding-bottom: .2em;
 }
+
+
 
 header nav a:hover{
     color:blue;
