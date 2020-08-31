@@ -123,8 +123,12 @@ geocode("300 Alamo Plaza, San Antonio, TX 78205", mapboxToken)
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Musume
 
-
+reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function (results) {
+    console.log(results)
+})
 
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
 
-
+reverseGeocode({lng:-98.658111, lat:29.22594}, mapboxToken).then(function (results) {
+    console.log(results);
+})
