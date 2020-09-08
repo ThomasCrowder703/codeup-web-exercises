@@ -11,7 +11,7 @@ geocode("7335 S Zarzamora St, San Antonio, TX 78224", mapboxToken)
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v11', // stylesheet location
             center: result, // starting position [lng, lat]
-            zoom: 17 // starting zoom
+            zoom: 9 // starting zoom
         });
 
         var markerOptions={
@@ -29,5 +29,26 @@ geocode("7335 S Zarzamora St, San Antonio, TX 78224", mapboxToken)
             .addTo(map)
             .setPopup(popup)
 
-    });
+        var restaurantsArray =[
+            {
+                name: "Villarta Grill",
+                location:"18940 K St, Somerset, TX 78069"
+            },
+            {
+                name: "Constantino's Pizza",
+                location: "7300 S Loop 1604 W, Somerset, TX 78069",
+            },
+            {
+              name:"Bill Millers",
+              location: "3939 Rockport Rd, San Antonio, TX 78264"
+            }
 
+        ]
+
+        restaurantsArray.forEach(function (restaurant) {
+            console.log(restaurant)
+        })
+
+
+
+});

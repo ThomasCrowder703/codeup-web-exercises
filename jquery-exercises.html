@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 id="main-header">Heading</h2>
+<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa labore laudantium magnam modi, molestiae mollitia non obcaecati officiis perspiciatis placeat praesentium quam, quia quis rem, saepe sint ut vel voluptatibus?</p>
+
+<div>
+    <ul class="list-of-items">
+        <li >First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ul>
+</div>
+
+<div id="second-div">
+    <p class="paragraph">Second Paragraph</p>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        alert("This DOM has finished loading!")
+    })
+
+   var headerAlert = $("#main-header").html();
+   alert(headerAlert);
+
+   var divAlert = $("#second-div").html();
+   alert(divAlert)
+</script>
+</body>
+</html>
