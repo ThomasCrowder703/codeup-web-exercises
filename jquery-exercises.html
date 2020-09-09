@@ -23,15 +23,22 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
+$("h2").click(function () {
+    $("h2").css("background-color","lightblue")
+});
 
-  $('li').css("font-size" , "20px");
+$("p").dblclick(function () {
+    $(this).css("font-size","18px")
+})
 
-    var heading = $("#main-header").html()
-    alert(heading)
+$("li").hover(function () {
+    $(this).css("color", "red")
+},
+    function () {
+        $(this).css("color", "black")
+    }
+)
 
-
-
-  $("h2 ,li , p").css("color", "red");
 </script>
 </body>
 </html>
