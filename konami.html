@@ -5,6 +5,9 @@
 </head>
 <body>
 <h1>Konami Code</h1>
+<div>
+
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
@@ -16,8 +19,9 @@
         // console.log(event.keyCode);
         userCode.push(event.keyCode)
         console.log(userCode);
-        if (userCode[0] === konami[0] && userCode[1] === konami[1]) {
-            alert("You have gained 30 lives!");
+        if (userCode.toString().includes(konami.toString())) {
+            // alert("You have gained 30 lives!");
+            $("div").append("<img src='img/3c42d9ac64af1129f2ef7e790f3fca54.jpg'>")
         }
     });
 
