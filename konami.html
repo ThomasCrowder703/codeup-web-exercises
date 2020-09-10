@@ -16,9 +16,8 @@
         // console.log(event.keyCode);
         userCode.push(event.keyCode)
         console.log(userCode);
-        if (userCode.length === konami.length) {
+        if (userCode[0] === konami[0] && userCode[1] === konami[1]) {
             alert("You have gained 30 lives!");
-
         }
     });
 
