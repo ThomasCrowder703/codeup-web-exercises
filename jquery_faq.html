@@ -46,7 +46,38 @@
     <dd>I haven't even heard of this one?</dd>
 </dl>
 
-<button>Toggle Visibility</button>
+<button id="visible-button">Toggle Visibility</button>
+
+
+<h3>Grand Canyon</h3>
+    <ul>
+        <li>It houses the Colorado River</li>
+        <li>It is located in Arizona</li>
+        <li>It is 1902 miles long</li>
+        <li>It is grand</li>
+    </ul>
+</ul>
+
+<h3>Meteor Crater</h3>
+    <ul>
+        <li>It is a crater made from a meteor</li>
+        <li>It was in a movie</li>
+        <li>It is in Arizona</li>
+        <li>It is a tourist attraction</li>
+    </ul>
+</ul>
+
+<h3>White Sands</h3>
+    <ul>
+        <li>The sand dunes are made of gypsum</li>
+        <li>It is located in New Mexico</li>
+        <li>It is also a missile range</li>
+        <li>You can go "sledding" down the sand dunes</li>
+    </ul>
+
+
+<button id="color-button">Last item yellow</button>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
@@ -54,7 +85,7 @@ $(document).ready(function () {
     $("dd").addClass("invisible")
 })
 
-$("button").click(function () {
+$("#visible-button").click(function () {
     $("dd").toggleClass("invisible")
 })
 
@@ -63,6 +94,23 @@ $("dt").click(function () {
 })
 
 $("dt").css("cursor", "pointer");
+
+$("#color-button").click(function () {
+    $("ul").each(function () {
+        $(this).children().last().css("background-color", "yellow");
+    })
+})
+
+
+$("h3").click(function () {
+    $(this).next().css("font-weight","bold")
+
+})
+
+$("li").click(function () {
+    $(this).parent().children().first().css("color", "blue")
+})
+
 
 
 </script>
