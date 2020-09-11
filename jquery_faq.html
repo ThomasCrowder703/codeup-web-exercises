@@ -11,9 +11,18 @@
         .highlight{
             background-color: #3B94D9;
         }
+
+        h2{
+            display: none;
+        }
     </style>
 </head>
 <body>
+<div>
+    <h1 id="news-container">Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+    <h2>Please, register for out site!</h2>
+</div>
 <dl>
     <dt>Grand Canyon</dt>
     <dd>How big is the Grand Canyon?</dd>
@@ -83,6 +92,8 @@
 <script>
 $(document).ready(function () {
     $("dd").addClass("invisible")
+    $("ul").hide()
+    $("h2").fadeIn(10000)
 })
 
 $("#visible-button").click(function () {
@@ -111,6 +122,14 @@ $("li").click(function () {
     $(this).parent().children().first().css("color", "blue")
 })
 
+$("span").css("cursor", "pointer");
+$("span").click(function () {
+    $("#news-container").hide();
+})
+
+$("h3").click(function () {
+    $(this).next().slideToggle(1500);
+})
 
 
 </script>
