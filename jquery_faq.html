@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Faq</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>Grand Canyon</dt>
+    <dd>How big is the Grand Canyon?</dd>
+
+    <dt>YellowStone National Park</dt>
+    <dd>Is YellowStone going to explode?</dd>
+
+    <dt>San Antonio Missions</dt>
+    <dd>Where are the San Antonio Missions?</dd>
+
+    <dt>White Sands New Mexico</dt>
+    <dd>What color are the sands at White Sands</dd>
+
+    <dt>Carlsbad Caverns</dt>
+    <dd>Are there bats in Carlsbad Caverns</dd>
+
+    <dt>Bandelier National Monument</dt>
+    <dd>What civilization used to live at Bandelier</dd>
+
+    <dt>Mesa Verde National Park</dt>
+    <dd>Random Question space</dd>
+
+    <dt>Great Sand Dunes National PArk</dt>
+    <dd>Running out of time</dd>
+
+    <dt>Big Bend National Park</dt>
+    <dd>How big is big bend</dd>
+
+    <dt>Guadalupe Mountains National Park </dt>
+    <dd>I haven't even heard of this one</dd>
+</dl>
+
+<button>Toggle Visibility</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+    $("dd").addClass("invisible")
+})
+
+$("button").click(function () {
+    $("dd").toggleClass("invisible")
+})
+
+</script>
+</body>
+</html>

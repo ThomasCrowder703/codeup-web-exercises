@@ -2,12 +2,14 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <h1>Konami Code</h1>
-<div>
+<div class="text-center">
 
 </div>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
@@ -21,7 +23,7 @@
         console.log(userCode);
         if (userCode.toString().includes(konami.toString())) {
             // alert("You have gained 30 lives!");
-            $("div").append("<img src='img/3c42d9ac64af1129f2ef7e790f3fca54.jpg'>")
+            $("div").append("<img class='text-center' src='img/3c42d9ac64af1129f2ef7e790f3fca54.jpg' alt='Bill and Teds Excellent Popup'>")
         }
     });
 
