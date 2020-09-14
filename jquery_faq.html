@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery Faq</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
         .invisible{
             visibility: hidden;
@@ -19,9 +20,11 @@
 </head>
 <body>
 <div>
-    <h1 id="news-container">Would you like to sign up for our newsletter?</h1>
+    <h1 class="alert-info" role="alert" id="news-container">Would you like to sign up for our newsletter?</h1>
     <span>X</span>
+
     <h2>Please, register for out site!</h2>
+    </div>
 </div>
 <dl>
     <dt>Grand Canyon</dt>
@@ -56,6 +59,7 @@
 </dl>
 
 <button id="visible-button">Toggle Visibility</button>
+<!--<a href="#">Toggle Visibility</a>-->
 
 
 <h3>Grand Canyon</h3>
@@ -125,6 +129,7 @@ $("li").click(function () {
 $("span").css("cursor", "pointer");
 $("span").click(function () {
     $("#news-container").hide();
+    $("span").hide();
 })
 
 $("h3").click(function () {

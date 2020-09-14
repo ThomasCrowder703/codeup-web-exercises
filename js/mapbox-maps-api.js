@@ -46,7 +46,7 @@ geocode("7335 S Zarzamora St, San Antonio, TX 78224", mapboxToken)
         ]
 
         restaurantsArray.forEach(function (restaurant) {
-            console.log(restaurant)
+            console.log(restaurant.name)
         })
 
 
