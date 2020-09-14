@@ -16,5 +16,15 @@
             "sugar"
         ],
         "date": "February 14, 2015"
-    }
+    }, {
+    "title": "Third Post",
+    "content": "I finally finished my Ajax exercise for Codeup! What a day!",
+    "categories": [
+        "academics",
+        "career-planning",
+        "Web-development",
+        "learning"
+    ],
+    "date": "September 14, 2020"
+}
 ]
