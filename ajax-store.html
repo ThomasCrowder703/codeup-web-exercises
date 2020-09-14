@@ -18,12 +18,13 @@
 
     </thead>
     <tbody id="insertProducts">
-
+    <button id="refresh-button">Refresh</button>
     </tbody>
+
 </table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
 (function() {
     "use strict";
@@ -44,11 +45,35 @@
                "        </tr>"
        }
 
+        $("#insertProducts").append(finalHtml)
+
+    })
 
 
+$("#refresh-button").click(function () {
+    $("#insertProducts").empty();
+    var finalHtml = "";
+    $.ajax("data/inventory.json").done(function (data) {
+        for(var i = 0; i <data.length; i++){
+            console.log("title: " + data[i].title);
+            console.log("quantity: " + data[i].quantity);
+            console.log("price: " + data[i].price);
+            console.log(data[i].categories);
+
+            finalHtml += "<tr>\n" +
+                "            <td>" + data[i].title + "</td>\n" +
+                "            <td>" + data[i].quantity + "</td>\n" +
+                "            <td>" + data[i].categories + "</td>\n" +
+                "            <td>" + data[i].price + "</td>\n" +
+                "        </tr>"
+        }
 
         $("#insertProducts").append(finalHtml)
+
     })
+
+})
+
 
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
