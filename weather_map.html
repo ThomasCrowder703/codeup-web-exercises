@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar bg-primary text-light">
+    <h6>Weather App</h6>
+    <p class="p-0">Current City</p>
+</nav>
+
+<div class="mb-5">
+    <label class="ml-3" for="citySearch">Place</label>
+    <input class="mt-4" placeholder="Area, City" id="citySearch">
+</div>
+
+<section class="ml-5">
+<div class="row">
+    <div class="card" style="width: 16rem;">
+        <div class="card-header">
+            Date goes here
+        </div>
+
+        <ul>
+            <li id="tempToday" class="border-bottom">Temp</li>
+            <li id ="descriptionToday" class="border-bottom">Description</li>
+            <li id="humidToday" class="border-bottom">Humidity</li>
+            <li id ="windToday" class="border-bottom">Wind</li>
+            <li id="pressureToday">Pressure</li>
+        </ul>
+    </div>
+
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div id="date2" class="card-header">
+
+        </div>
+
+        <ul>
+            <li id="temp2" class="border"></li>
+            <li id="description2" class="border-bottom"></li>
+            <li id="humidity2" class="border-bottom"></li>
+            <li id="wind2" class="border-bottom"></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div class="card-header">
+            Date goes here
+        </div>
+
+        <ul>
+            <li class="border">Temp</li>
+            <li class="border-bottom">Description</li>
+            <li class="border-bottom">Humidity</li>
+            <li class="border-bottom">Wind</li>
+            <li>Pressure</li>
+        </ul>
+    </div>
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div class="card-header">
+            Date goes here
+        </div>
+
+        <ul>
+            <li class="border">Temp</li>
+            <li class="border-bottom">Description</li>
+            <li class="border-bottom">Humidity</li>
+            <li class="border-bottom">Wind</li>
+            <li>Pressure</li>
+        </ul>
+    </div>
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div class="card-header">
+            Date goes here
+        </div>
+
+        <ul>
+            <li class="border">Temp</li>
+            <li class="border-bottom">Description</li>
+            <li class="border-bottom">Humidity</li>
+            <li class="border-bottom">Wind</li>
+            <li>Pressure</li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+
+$.get("http://api.openweathermap.org/data/2.5/weather",{
+    "APPID": weatherAPI,
+    "q": "San Antonio, TX, US",
+    "units": "imperial"
+}).done(function(data) {
+    console.log(data)
+    $("#tempToday").empty().append(data.main.temp);
+    $("#descriptionToday").empty().append("Description: " + data.weather[0].description);
+    $("#humidToday").empty().append("Humidity: " + data.main.humidity + "%");
+    $("#windToday").empty().append("Wind: " + Math.floor(data.wind.speed) + " mph");
+    $("#pressureToday").empty().append("Pressure: " + data.main.pressure)
+});
+
+$.get("http://api.openweathermap.org/data/2.5/forecast/",{
+    "APPID" : weatherAPI,
+    "q": "San Antonio, TX, US",
+    "units": "imperial"
+}).done(function (data) {
+    console.log(data)
+    $("#date2").append(data.list[2].dt_txt)
+    $("#temp2").append(data.list[2].main.temp)
+    $("#description2").append(data.list[2].weather[0].description)
+    $("#humidity2").append(data.list[2].main.humidity)
+    $("#date2").append(data.list[2])
+})
+
+</script>
+</body>
+</html>
