@@ -20,7 +20,7 @@
 <div class="row">
     <div class="card" style="width: 16rem;">
         <div class="card-header">
-            Date goes here
+
         </div>
 
         <ul>
@@ -43,49 +43,49 @@
             <li id="description2" class="border-bottom"></li>
             <li id="humidity2" class="border-bottom"></li>
             <li id="wind2" class="border-bottom"></li>
-            <li></li>
+            <li id="pressure2"></li>
         </ul>
     </div>
 
     <div class="card ml-4" style="width: 16rem;">
-        <div class="card-header">
-            Date goes here
+        <div id="date3" class="card-header">
+
         </div>
 
         <ul>
-            <li class="border">Temp</li>
-            <li class="border-bottom">Description</li>
-            <li class="border-bottom">Humidity</li>
-            <li class="border-bottom">Wind</li>
-            <li>Pressure</li>
+            <li id="temp3" class="border"></li>
+            <li id="description3" class="border-bottom"></li>
+            <li id="humidity3" class="border-bottom"></li>
+            <li id="wind3" class="border-bottom"></li>
+            <li id="pressure3" ></li>
         </ul>
     </div>
 
     <div class="card ml-4" style="width: 16rem;">
-        <div class="card-header">
-            Date goes here
+        <div id="date4" class="card-header">
+
         </div>
 
         <ul>
-            <li class="border">Temp</li>
-            <li class="border-bottom">Description</li>
-            <li class="border-bottom">Humidity</li>
-            <li class="border-bottom">Wind</li>
-            <li>Pressure</li>
+            <li id="temp4" class="border"></li>
+            <li id="description4" class="border-bottom"></li>
+            <li id="humidity4" class="border-bottom"></li>
+            <li id="wind4" class="border-bottom"></li>
+            <li id="pressure4" ></li>
         </ul>
     </div>
 
     <div class="card ml-4" style="width: 16rem;">
-        <div class="card-header">
-            Date goes here
+        <div id="date5" class="card-header">
+
         </div>
 
         <ul>
-            <li class="border">Temp</li>
-            <li class="border-bottom">Description</li>
-            <li class="border-bottom">Humidity</li>
-            <li class="border-bottom">Wind</li>
-            <li>Pressure</li>
+            <li id="temp5" class="border"></li>
+            <li id="description5" class="border-bottom"></li>
+            <li id="humidity5" class="border-bottom"></li>
+            <li id="wind5" class="border-bottom"></li>
+            <li id="pressure5"></li>
         </ul>
     </div>
 </div>
@@ -116,11 +116,35 @@ $.get("http://api.openweathermap.org/data/2.5/forecast/",{
     "units": "imperial"
 }).done(function (data) {
     console.log(data)
-    $("#date2").append(data.list[2].dt_txt)
-    $("#temp2").append(data.list[2].main.temp)
-    $("#description2").append(data.list[2].weather[0].description)
-    $("#humidity2").append(data.list[2].main.humidity)
-    $("#date2").append(data.list[2])
+    $("#date2").append(data.list[2].dt_txt);
+    $("#temp2").append(data.list[2].main.temp);
+    $("#description2").append("Description: " + data.list[2].weather[0].description);
+    $("#humidity2").append("Humidity:" + data.list[2].main.humidity);
+    $("#wind2").append("Wind: " + Math.floor(data.list[2].wind.speed));
+    $("#pressure2").append("Pressure: " + data.list[2].main.pressure);
+
+    $("#date3").append(data.list[9].dt_txt);
+    $("#temp3").append(data.list[9].main.temp);
+    $("#description3").append("Description: " + data.list[9].weather[0].description);
+    $("#humidity3").append("Humidity:" + data.list[9].main.humidity);
+    $("#wind3").append("Wind: " + Math.floor(data.list[9].wind.speed));
+    $("#pressure3").append("Pressure: " + data.list[9].main.pressure);
+
+    $("#date4").append(data.list[17].dt_txt);
+    $("#temp4").append(data.list[17].main.temp);
+    $("#description4").append("Description: " + data.list[17].weather[0].description);
+    $("#humidity4").append("Humidity:" + data.list[17].main.humidity);
+    $("#wind4").append("Wind: " + Math.floor(data.list[17].wind.speed));
+    $("#pressure4").append("Pressure: " + data.list[17].main.pressure);
+
+    $("#date5").append(data.list[25].dt_txt);
+    $("#temp5").append(data.list[25].main.temp);
+    $("#description5").append("Description: " + data.list[25].weather[0].description);
+    $("#humidity5").append("Humidity:" + data.list[25].main.humidity);
+    $("#wind5").append("Wind: " + Math.floor(data.list[25].wind.speed));
+    $("#pressure5").append("Pressure: " + data.list[25].main.pressure);
+
+
 })
 
 </script>
