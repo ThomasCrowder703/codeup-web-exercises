@@ -9,4 +9,13 @@
           zoom: 9 // starting zoom
 
       })
+      var markerOptions ={
+          color: "red",
+          draggable: true,
+      }
+
+      var marker = new mapboxgl.Marker(markerOptions)
+          .setLngLat(result)
+          .addTo(map)
+
   });
