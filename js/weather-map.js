@@ -1,7 +1,7 @@
   mapboxgl.accessToken = weatherMapToken
 
   geocode("300 Alamo Plaza, San Antonio, TX 78205", weatherMapToken).then(function (result) {
-        console.log(result);
+      console.log(result);
       var map = new mapboxgl.Map({
           container: 'map',
           style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
@@ -9,13 +9,36 @@
           zoom: 9 // starting zoom
 
       })
-      var markerOptions ={
-          color: "red",
-          draggable: true,
-      }
-
-      var marker = new mapboxgl.Marker(markerOptions)
-          .setLngLat(result)
-          .addTo(map)
-
   });
+
+  document.getElementById('userSubmit').addEventListener('click', function(e) {
+      e.preventDefault();
+      var newCity = (document.getElementById("userCity").value);
+
+      geocode(newCity, weatherMapToken).then(function (result) {
+          console.log(result);
+          var map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+              center: result, // starting position [lng, lat]
+              zoom: 9 // starting zoom
+
+          })
+          var markerOptions ={
+              color: "red",
+              draggable: true,
+          }
+
+          var marker = new mapboxgl.Marker(markerOptions)
+              .setLngLat(result)
+              .addTo(map)
+
+      });
+  });
+
+
+
+
+
+
+

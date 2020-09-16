@@ -14,10 +14,13 @@
     <p class="p-0">Current City</p>
 </nav>
 
-<div class="mb-5">
-    <label class="ml-3" for="citySearch">Place</label>
-    <input class="mt-4" placeholder="Area, City" id="citySearch">
-</div>
+<form>
+    <div class="mb-5">
+        <label class="ml-3" for="citySearch">Place</label>
+        <input id="userCity" class="mt-4" placeholder="Area, City" id="citySearch">
+        <button id="userSubmit" type="submit" class="btn-primary">Find</button>
+    </div>
+</form>
 
 <section class="ml-5">
 <div class="row">
@@ -104,25 +107,21 @@
 <script src="js/weather-map.js"></script>
 <script>
 
-$.get("http://api.openweathermap.org/data/2.5/weather",{
-    "APPID": weatherAPI,
-    "q": "San Antonio, TX, US",
-    "units": "imperial"
-}).done(function(data) {
-    console.log(data)
-    $("#tempToday").empty().append(data.main.temp);
-    $("#descriptionToday").empty().append("Description: " + data.weather[0].description);
-    $("#humidToday").empty().append("Humidity: " + data.main.humidity + "%");
-    $("#windToday").empty().append("Wind: " + Math.floor(data.wind.speed) + " mph");
-    $("#pressureToday").empty().append("Pressure: " + data.main.pressure)
-});
-
 $.get("http://api.openweathermap.org/data/2.5/forecast/",{
     "APPID" : weatherAPI,
     "q": "San Antonio, TX, US",
     "units": "imperial"
 }).done(function (data) {
+
     console.log(data)
+    $("#date").append(data.list[0].dt_txt);
+    $("#tempToday").empty().append(data.list[0].main.temp);
+    $("#descriptionToday").empty().append("Description: " + data.list[0].weather[0].description);
+    $("#humidToday").empty().append("Humidity: " + data.list[0].main.humidity + "%");
+    $("#windToday").empty().append("Wind: " + Math.floor(data.list[0].wind.speed) + " mph");
+    $("#pressureToday").empty().append("Pressure: " + data.list[0].main.pressure)
+
+
     $("#date2").append(data.list[2].dt_txt);
     $("#temp2").append(data.list[2].main.temp);
     $("#description2").append("Description: " + data.list[2].weather[0].description);
@@ -130,26 +129,26 @@ $.get("http://api.openweathermap.org/data/2.5/forecast/",{
     $("#wind2").append("Wind: " + Math.floor(data.list[2].wind.speed));
     $("#pressure2").append("Pressure: " + data.list[2].main.pressure);
 
-    $("#date3").append(data.list[9].dt_txt);
-    $("#temp3").append(data.list[9].main.temp);
-    $("#description3").append("Description: " + data.list[9].weather[0].description);
-    $("#humidity3").append("Humidity:" + data.list[9].main.humidity);
-    $("#wind3").append("Wind: " + Math.floor(data.list[9].wind.speed));
-    $("#pressure3").append("Pressure: " + data.list[9].main.pressure);
+    $("#date3").append(data.list[10].dt_txt);
+    $("#temp3").append(data.list[10].main.temp);
+    $("#description3").append("Description: " + data.list[10].weather[0].description);
+    $("#humidity3").append("Humidity:" + data.list[10].main.humidity);
+    $("#wind3").append("Wind: " + Math.floor(data.list[10].wind.speed));
+    $("#pressure3").append("Pressure: " + data.list[10].main.pressure);
 
-    $("#date4").append(data.list[17].dt_txt);
-    $("#temp4").append(data.list[17].main.temp);
-    $("#description4").append("Description: " + data.list[17].weather[0].description);
-    $("#humidity4").append("Humidity:" + data.list[17].main.humidity);
-    $("#wind4").append("Wind: " + Math.floor(data.list[17].wind.speed));
-    $("#pressure4").append("Pressure: " + data.list[17].main.pressure);
+    $("#date4").append(data.list[18].dt_txt);
+    $("#temp4").append(data.list[18].main.temp);
+    $("#description4").append("Description: " + data.list[18].weather[0].description);
+    $("#humidity4").append("Humidity:" + data.list[18].main.humidity);
+    $("#wind4").append("Wind: " + Math.floor(data.list[18].wind.speed));
+    $("#pressure4").append("Pressure: " + data.list[18].main.pressure);
 
-    $("#date5").append(data.list[25].dt_txt);
-    $("#temp5").append(data.list[25].main.temp);
-    $("#description5").append("Description: " + data.list[25].weather[0].description);
-    $("#humidity5").append("Humidity:" + data.list[25].main.humidity);
-    $("#wind5").append("Wind: " + Math.floor(data.list[25].wind.speed));
-    $("#pressure5").append("Pressure: " + data.list[25].main.pressure);
+    $("#date5").append(data.list[26].dt_txt);
+    $("#temp5").append(data.list[26].main.temp);
+    $("#description5").append("Description: " + data.list[26].weather[0].description);
+    $("#humidity5").append("Humidity:" + data.list[26].main.humidity);
+    $("#wind5").append("Wind: " + Math.floor(data.list[26].wind.speed));
+    $("#pressure5").append("Pressure: " + data.list[26].main.pressure);
 
 
 })
