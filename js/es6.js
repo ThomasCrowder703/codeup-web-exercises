@@ -51,10 +51,12 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
+users.forEach = (user) => {
   return emails.push(user.email);
 });
-users.forEach(function(user) {
+
+
+users.forEach = (user) => {
   return names.push(user.name);
 });
 
