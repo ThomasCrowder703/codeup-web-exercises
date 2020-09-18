@@ -84,11 +84,12 @@
           $("#humidity5").empty().append("Humidity:" + data.list[26].main.humidity);
           $("#wind5").empty().append("Wind: " + Math.floor(data.list[26].wind.speed));
           $("#pressure5").empty().append("Pressure: " + data.list[26].main.pressure);
+
       });
 
       $("li").css("list-style", "none");
 
-      $("#currentCity").empty()
+
 
   });
 
