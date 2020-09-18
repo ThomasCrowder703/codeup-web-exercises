@@ -50,3 +50,9 @@ everyoneEmail.push(coderMail)
 
 console.log(everyoneEmail);
 
+const totalExperience = users.reduce((accumulator, year)=> {
+    return accumulator + year.yearsOfExperience
+
+}, 0)
+
+console.log(totalExperience)
