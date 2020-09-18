@@ -103,10 +103,12 @@ geocode("300 Alamo Plaza, San Antonio, TX 78205", mapboxToken)
         var markerOptions ={
             color: "red",
             draggable: true,
+
         }
         var marker = new mapboxgl.Marker(markerOptions)
-            .setLngLat(result)
             .addTo(map)
+
+
 
 
 

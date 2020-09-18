@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar bg-primary text-light">
+    <h6>Weather App</h6>
+    <p class="p-0">Current City</p>
+</nav>
+
+<form>
+    <div class="mb-5">
+        <label class="ml-3" for="citySearch">Place</label>
+        <input id="userCity" class="mt-4" placeholder="Ex: Dallas, TX, US" id="citySearch">
+        <button id="userSubmit" type="submit" class="btn-primary">Find</button>
+    </div>
+</form>
+
+<section class="ml-5">
+<div class="row">
+    <div class="card" style="width: 16rem;">
+        <div id="date" class="card-header">
+
+        </div>
+
+        <ul>
+            <li id="tempToday" class="border-bottom">Temp</li>
+            <li id ="descriptionToday" class="border-bottom">Description</li>
+            <li id="humidToday" class="border-bottom">Humidity</li>
+            <li id ="windToday" class="border-bottom">Wind</li>
+            <li id="pressureToday">Pressure</li>
+        </ul>
+    </div>
+
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div id="date2" class="card-header">
+
+        </div>
+
+        <ul>
+            <li id="temp2" class="border-bottom"></li>
+            <li id="description2" class="border-bottom"></li>
+            <li id="humidity2" class="border-bottom"></li>
+            <li id="wind2" class="border-bottom"></li>
+            <li id="pressure2"></li>
+        </ul>
+    </div>
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div id="date3" class="card-header">
+
+        </div>
+
+        <ul>
+            <li id="temp3" class="border-bottom"></li>
+            <li id="description3" class="border-bottom"></li>
+            <li id="humidity3" class="border-bottom"></li>
+            <li id="wind3" class="border-bottom"></li>
+            <li id="pressure3" ></li>
+        </ul>
+    </div>
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div id="date4" class="card-header">
+
+        </div>
+
+        <ul>
+            <li id="temp4" class="border-bottom"></li>
+            <li id="description4" class="border-bottom"></li>
+            <li id="humidity4" class="border-bottom"></li>
+            <li id="wind4" class="border-bottom"></li>
+            <li id="pressure4" ></li>
+        </ul>
+    </div>
+
+    <div class="card ml-4" style="width: 16rem;">
+        <div id="date5" class="card-header">
+
+        </div>
+
+        <ul>
+            <li id="temp5" class="border-bottom"></li>
+            <li id="description5" class="border-bottom"></li>
+            <li id="humidity5" class="border-bottom"></li>
+            <li id="wind5" class="border-bottom"></li>
+            <li id="pressure5"></li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<div id='map' style='width: 100%; height: 500px;' class="mt-5"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/weather-map.js"></script>
+<!--<script>-->
+
+<!--$.get("http://api.openweathermap.org/data/2.5/forecast/",{-->
+<!--    "APPID" : weatherAPI,-->
+<!--    "q": "San Antonio, TX, US",-->
+<!--    "units": "imperial"-->
+<!--}).done(function (data) {-->
+
+<!--    console.log(data)-->
+<!--    $("#date").append(data.list[0].dt_txt);-->
+<!--    $("#tempToday").empty().append(data.list[0].main.temp);-->
+<!--    $("#descriptionToday").empty().append("Description: " + data.list[0].weather[0].description);-->
+<!--    $("#humidToday").empty().append("Humidity: " + data.list[0].main.humidity + "%");-->
+<!--    $("#windToday").empty().append("Wind: " + Math.floor(data.list[0].wind.speed) + " mph");-->
+<!--    $("#pressureToday").empty().append("Pressure: " + data.list[0].main.pressure)-->
+
+
+<!--    $("#date2").append(data.list[2].dt_txt);-->
+<!--    $("#temp2").append(data.list[2].main.temp);-->
+<!--    $("#description2").append("Description: " + data.list[2].weather[0].description);-->
+<!--    $("#humidity2").append("Humidity:" + data.list[2].main.humidity);-->
+<!--    $("#wind2").append("Wind: " + Math.floor(data.list[2].wind.speed));-->
+<!--    $("#pressure2").append("Pressure: " + data.list[2].main.pressure);-->
+
+<!--    $("#date3").append(data.list[10].dt_txt);-->
+<!--    $("#temp3").append(data.list[10].main.temp);-->
+<!--    $("#description3").append("Description: " + data.list[10].weather[0].description);-->
+<!--    $("#humidity3").append("Humidity:" + data.list[10].main.humidity);-->
+<!--    $("#wind3").append("Wind: " + Math.floor(data.list[10].wind.speed));-->
+<!--    $("#pressure3").append("Pressure: " + data.list[10].main.pressure);-->
+
+<!--    $("#date4").append(data.list[18].dt_txt);-->
+<!--    $("#temp4").append(data.list[18].main.temp);-->
+<!--    $("#description4").append("Description: " + data.list[18].weather[0].description);-->
+<!--    $("#humidity4").append("Humidity:" + data.list[18].main.humidity);-->
+<!--    $("#wind4").append("Wind: " + Math.floor(data.list[18].wind.speed));-->
+<!--    $("#pressure4").append("Pressure: " + data.list[18].main.pressure);-->
+
+<!--    $("#date5").append(data.list[26].dt_txt);-->
+<!--    $("#temp5").append(data.list[26].main.temp);-->
+<!--    $("#description5").append("Description: " + data.list[26].weather[0].description);-->
+<!--    $("#humidity5").append("Humidity:" + data.list[26].main.humidity);-->
+<!--    $("#wind5").append("Wind: " + Math.floor(data.list[26].wind.speed));-->
+<!--    $("#pressure5").append("Pressure: " + data.list[26].main.pressure);-->
+
+
+<!--})-->
+
+<!--</script>-->
+</body>
+</html>
