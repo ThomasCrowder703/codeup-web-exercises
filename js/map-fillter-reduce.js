@@ -45,4 +45,8 @@ console.log("These people know 3 or more languages: " , manyLanguages[0]);
 
 let everyoneEmail = [];
 
-const coderMail = users.map()
+const coderMail = users.map(x => {return x.email})
+everyoneEmail.push(coderMail)
+
+console.log(everyoneEmail);
+
