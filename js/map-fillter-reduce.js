@@ -56,3 +56,13 @@ const totalExperience = users.reduce((accumulator, year)=> {
 }, 0)
 
 console.log(totalExperience)
+
+
+function calculateEmail(x){
+    for (let i =0; i < x.length; i++){
+        let emailLength = x[i].email;
+        console.log(emailLength)
+    }
+}
+
+calculateEmail(users);
