@@ -1,5 +1,5 @@
   mapboxgl.accessToken = weatherMapToken
-
+  //
   geocode("300 Alamo Plaza, San Antonio, TX 78205", weatherMapToken).then(function (result) {
       console.log(result);
       var map = new mapboxgl.Map({
@@ -11,9 +11,13 @@
       })
   });
 
+
+
   document.getElementById('userSubmit').addEventListener('click', function(e) {
       e.preventDefault();
       var newCity = (document.getElementById("userCity").value);
+
+      $("#current-city").empty().append("Current City: " + newCity)
 
       geocode(newCity, weatherMapToken).then(function (result) {
           console.log(result);
@@ -35,8 +39,8 @@
 
       });
 
-
-
+  //
+  //
       //ajax begins
       $.get("http://api.openweathermap.org/data/2.5/forecast/", {
           "APPID": weatherAPI,
@@ -83,6 +87,8 @@
       });
 
       $("li").css("list-style", "none");
+
+      $("#currentCity").empty()
 
   });
 
