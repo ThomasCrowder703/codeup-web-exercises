@@ -61,3 +61,12 @@ console.log(totalExperience)
 
 const longestEmail = users .map((user)=> user.email ) .reduce((a,b)=> a.length > b.length ? a : b );
 console.log(longestEmail);
+
+let everyoneNamesTemp = [];
+
+const combineNames = users.map(x => {return x.name})
+everyoneNamesTemp.push(combineNames);
+let everyoneNames = everyoneNamesTemp.join("");
+console.log(everyoneNamesTemp);
+console.log(everyoneNames);
+
