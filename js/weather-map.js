@@ -1,5 +1,10 @@
   mapboxgl.accessToken = weatherMapToken
-  //
+
+  $(document).ready(function () {
+        $("#myModal").modal("show")
+  })
+
+  //everything under here sets the map to San Antonio when the page loads
   geocode("300 Alamo Plaza, San Antonio, TX 78205", weatherMapToken).then(function (result) {
       console.log(result);
       var map = new mapboxgl.Map({
@@ -12,12 +17,13 @@
   });
 
 
-
+// everything under here renders the map according to the seachbar
   document.getElementById('userSubmit').addEventListener('click', function(e) {
       e.preventDefault();
       var newCity = (document.getElementById("userCity").value);
 
       $("#current-city").empty().append("Current City: " + newCity)
+      $("#myModal").modal("hide")
 
       geocode(newCity, weatherMapToken).then(function (result) {
           console.log(result);
@@ -35,12 +41,14 @@
 
           var marker = new mapboxgl.Marker(markerOptions)
               .setLngLat(result)
-              .addTo(map)
+              .addTo(map);
+
 
       });
 
+
   //
-  //
+  //everything under here renders the HTML according to the coordinates entered in the searchbar
       //ajax begins
       $.get("http://api.openweathermap.org/data/2.5/forecast/", {
           "APPID": weatherAPI,
@@ -92,7 +100,6 @@
 
 
   });
-
 
 
 
