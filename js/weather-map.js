@@ -1,6 +1,7 @@
-  mapboxgl.accessToken = weatherMapToken
+(function() {
+mapboxgl.accessToken = weatherMapToken
 
-  $(document).ready(function () {
+  $(document).ready(function (e) {
         $("#myModal").modal("show")
   })
 
@@ -18,12 +19,25 @@
 
 
 // everything under here renders the map according to the seachbar
+  var searchBarHtml = ""
   document.getElementById('userSubmit').addEventListener('click', function(e) {
       e.preventDefault();
       var newCity = (document.getElementById("userCity").value);
 
       $("#current-city").empty().append("Current City: " + newCity)
       $("#myModal").modal("hide")
+
+      searchBarHtml += "<form>\n" +
+          "    <div class=\"mb-5\">" +"\n" +
+          "        <label class=\"ml-3\" for=\"citySearch\">" + "Place" + "</label>\n" +
+          "        <input id=\"userCity\" class=\"mt-4\" placeholder=\"Ex: Dallas, TX, US\" id=\"citySearch\">\n" +
+          "        <button id=\"userSubmit\" type=\"submit\" class=\"btn-primary\">" + "Find" + "</button>\n" +
+          "    </div>\n" +
+          "</form>"
+
+    $("#searchSection").append(searchBarHtml)
+
+
 
       geocode(newCity, weatherMapToken).then(function (result) {
           console.log(result);
@@ -100,6 +114,8 @@
 
 
   });
+
+})();
 
 
 
