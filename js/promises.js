@@ -17,6 +17,7 @@ function getLastCommit(param) {
 
 }
 
+getLastCommit("ThomasCrowder703")
 
 // let loginName = []
 //     fetch("https://api.github.com/users", {headers: {'Authorization': }})
@@ -30,4 +31,3 @@ function getLastCommit(param) {
 //         })
 // console.log(loginName)
 
-getLastCommit("ThomasCrowder703")
