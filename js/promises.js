@@ -3,7 +3,7 @@
 
 
 function getLastCommit(param) {
-    fetch("https://api.github.com/users/" + param + "/events/public", {headers: {'Authorization': 'token 6048dc904d8ae911b884437ba68a04f3df110f98'}})
+    fetch("https://api.github.com/users/" + param + "/events/public", {headers: {'Authorization': promisesToken}})
         .then(response => {
             response.json().then(users => {
                 for (var i =0; i <users.length; i++) {
@@ -19,7 +19,7 @@ function getLastCommit(param) {
 
 
 // let loginName = []
-//     fetch("https://api.github.com/users", {headers: {'Authorization': 'token 6048dc904d8ae911b884437ba68a04f3df110f98'}})
+//     fetch("https://api.github.com/users", {headers: {'Authorization': }})
 //         .then(response => {
 //             response.json().then(users => {
 //                 for( let i = 0; i < users.length; i++){
