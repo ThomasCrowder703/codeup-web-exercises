@@ -29,9 +29,7 @@
 
         searchBarHtml += "<form>\n" +
             "    <div class=\"mb-5\">" +"\n" +
-            "        <label class=\"ml-3\" for=\"citySearch\">" + "Place" + "</label>\n" +
-            "        <input id=\"userCity\" class=\"mt-4\" placeholder=\"Ex: Dallas, TX, US\" id=\"citySearch\">\n" +
-            "        <button id=\"userSubmit\" type=\"submit\" class=\"btn-primary\">" + "Find" + "</button>\n" +
+            "        <button id=\"userSubmit\" type=\"submit\" class=\"btn-primary text-center\">" + "Find" + "</button>\n" +
             "    </div>\n" +
             "</form>"
 
