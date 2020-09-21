@@ -12,8 +12,8 @@ function getLastCommit(param) {
                         break;
                     }
                 }
-                })
-            });
+            })
+        });
 
 }
 
@@ -31,5 +31,3 @@ function getLastCommit(param) {
 // console.log(loginName)
 
 getLastCommit("ThomasCrowder703")
-
-
