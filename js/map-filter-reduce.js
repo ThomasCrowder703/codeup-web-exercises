@@ -62,6 +62,19 @@ console.log(totalExperience)
 const longestEmail = users .map((user)=> user.email ) .reduce((a,b)=> a.length > b.length ? a : b );
 console.log(longestEmail);
 
+console.log(" ")
+
+const longestEmail2 = users.reduce((longest, user)=>{
+    if(user.email.length > longest.length){
+        return user.email
+    }else{
+        return longest;
+    }
+},"") //Douglas' Method
+
+console.log("Douglas' Method for solving: "+ longestEmail2);
+
+
 let everyoneNamesTemp = [];
 
 const combineNames = users.map(x => {return x.name})
@@ -70,3 +83,15 @@ let everyoneNames = everyoneNamesTemp.join("");
 console.log(everyoneNamesTemp);
 console.log(everyoneNames);
 
+//Bonus Exercise
+
+const allLanguages = users.reduce((languages, user)=> {
+    user.languages.forEach((language)=>{
+        if(!languages.includes(language)){
+            languages.push(language);
+        }
+    });
+    return languages
+}, [])
+
+console.log(allLanguages);
